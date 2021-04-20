@@ -1,16 +1,19 @@
 package lv.lu.finalwork.ui;
 
 import lv.lu.finalwork.model.ProductInputData;
-import lv.lu.finalwork.repository.ProductRepository;
 import lv.lu.finalwork.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import java.util.Scanner;
 
+@Controller
 public class ConsoleUi {
 
-    private ProductService productService;
-    private Scanner scanner;
+    private final ProductService productService;
+    private final Scanner scanner;
 
+    @Autowired
     public ConsoleUi(ProductService productService, Scanner scanner) {
         this.productService = productService;
         this.scanner = scanner;
@@ -19,7 +22,7 @@ public class ConsoleUi {
     public void run() {
 
         int userChoice;
-        while (true){
+        while (true) {
 
             printMenu();
             userChoice = scanner.nextInt();

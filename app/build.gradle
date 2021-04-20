@@ -18,13 +18,23 @@ repositories {
 
 dependencies {
 
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+
+
+    implementation group: 'org.springframework', name: 'spring-context', version: '5.3.6'
+
     // Use JUnit test framework.
     testImplementation 'junit:junit:4.13'
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.8.0'
+
+    testCompileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
 
 }
 
 application {
     // Define the main class for the application.
-    mainClass = 'lv.lu.finalwork.App'
+    mainClass = 'lv.lu.finalwork.ProductAccountingApplication'
 }
