@@ -17,8 +17,8 @@ import java.io.IOException;
 import java.util.Properties;
 
 @Configuration
-@PropertySource("classpath:application.properties")
 @EnableTransactionManagement
+@PropertySource("classpath:application.properties")
 public class H2Configuration {
 
     @Bean
