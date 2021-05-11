@@ -2,9 +2,9 @@ package lv.lu.finalwork.service;
 
 import lv.lu.finalwork.domain.Product;
 import lv.lu.finalwork.domain.ProductCategory;
+import lv.lu.finalwork.domain.ProductCrudRepository;
 import lv.lu.finalwork.model.ProductData;
 import lv.lu.finalwork.model.ProductInputData;
-import lv.lu.finalwork.repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +15,10 @@ import java.util.List;
 @Service
 public class ProductService {
 
-    private final Repository<Product> productRepository;
+    private final ProductCrudRepository productRepository;
 
     @Autowired
-    public ProductService(Repository<Product> productOrmRepository) {
+    public ProductService(ProductCrudRepository productOrmRepository) {
         this.productRepository = productOrmRepository;
     }
 
